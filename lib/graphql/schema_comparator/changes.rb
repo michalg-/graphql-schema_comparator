@@ -426,7 +426,7 @@ module GraphQL
         end
 
         def message
-          "Schema subscription type has changed from `#{old_schema.subscription}` to `#{new_schema.subscription}`"
+          "Schema subscription type has changed from `#{old_schema.subscription&.to_graphql}` to `#{new_schema.subscription.to_graphql}`"
         end
 
         def path
